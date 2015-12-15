@@ -30,7 +30,12 @@ RUN npm install
 
 VOLUME /music
 
-ADD env .env
-ADD run.sh run.sh
+COPY env .env
+COPY run.sh run.sh
+
+USER root
+RUN chown -R koel:koel /app
+
+USER koel
 
 CMD ["/app/koel/run.sh"]
