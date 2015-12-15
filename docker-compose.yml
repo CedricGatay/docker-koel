@@ -1,0 +1,15 @@
+db:
+  image: mysql:5
+  environment:
+   - MYSQL_PASSWORD=db
+   - MYSQL_USERNAME=db
+   - MYSQL_DATABASE=db
+   - MYSQL_ROOT_PASSWORD=bowbeforeme
+app:
+  links:
+   - db:db
+  ports:
+   - 8000:8000
+  build: .
+  volumes:
+   - ./media:/music
