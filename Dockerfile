@@ -27,9 +27,6 @@ RUN git clone https://github.com/phanan/koel \
 WORKDIR /app/koel
 
 RUN npm install
-# \
-#    && node_modules/bower/bin/bower install --allow-root \
-#    && node node_modules/gulp/bin/gulp.js --production
 
 VOLUME /music
 
